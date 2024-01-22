@@ -18,10 +18,4 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log("Player Start");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
