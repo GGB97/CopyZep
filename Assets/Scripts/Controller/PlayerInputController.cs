@@ -34,8 +34,13 @@ public class PlayerInputController : CharController
             CallLookEvent(newAim);
         }
     }
-    public void OnDash(InputValue value)
+    public void OnSlide(InputValue value)
     {
-        isDash = value.isPressed;
+        // 마우스 위치를 Vector2 값으로 가져오기
+        Vector2 mousePos = Mouse.current.position.ReadValue();
+        Vector2 worldPos = _camera.ScreenToWorldPoint(mousePos);
+        Vector2 direction = (worldPos - (Vector2)transform.position).normalized;
+        
+        CallSlideEvent(direction);
     }
 }

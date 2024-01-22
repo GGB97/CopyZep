@@ -10,7 +10,8 @@ public class Movement : MonoBehaviour
     Vector2 _moventDirection = Vector2.zero;
     Rigidbody2D _rigidbody;
 
-    float knockbackDuration = 0; // 대쉬로 바꾸면 될듯?
+    bool _isSliding;
+    float _slidingDuration;
 
     private void Awake()
     {
@@ -21,22 +22,42 @@ public class Movement : MonoBehaviour
     private void Start()
     {
         _controller.OnMoveEvent += Move;
+        _controller.OnSlideEvent += Sliding;
+        SlidingInit();
     }
 
     private void FixedUpdate()
     {
         ApplyMovent(_moventDirection);
-        if (knockbackDuration > 0)
+
+        if (_isSliding)
         {
-            knockbackDuration -= Time.fixedDeltaTime; // Time.deltaTime -> 이건 Update 문에서 사용
-        }                                             // FixedUpdate 에서는 Time.fixedDeltaTime 사용
+            _slidingDuration -= Time.fixedDeltaTime;
+
+            if(_slidingDuration < 0)
+            {
+                SlidingInit();
+            }
+        }
+    }
+
+    void SlidingInit()
+    {
+        _moventDirection = Vector2.zero;
+        _isSliding = false;
+        _slidingDuration = 0.6f;
     }
 
     void Move(Vector2 direction)
     {
-        _moventDirection = direction;
+        if(!_isSliding)
+            _moventDirection = direction;
     }
-
+    void Sliding(Vector2 direction)
+    {
+        _moventDirection = direction * 2f;
+        _isSliding = true;
+    }
     void ApplyMovent(Vector2 direction)
     {
         direction = direction * 5f; // 속도
