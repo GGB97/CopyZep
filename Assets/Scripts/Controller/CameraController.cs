@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] Transform playerTransform;
+    public Transform playerTransform;
     Vector3 cameraPosition;
 
     private void Awake()
