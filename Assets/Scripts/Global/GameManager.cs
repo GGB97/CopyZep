@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     GameObject playerPrefab;
     GameObject playerObj;
 
+    [SerializeField] GameObject mainCanvas; // 자꾸 화면 가려서
     [SerializeField] GameObject changeCharObj;
     [SerializeField] GameObject changeNameObj;
     [SerializeField] GameObject userListObj;
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
         int idx = PlayerPrefs.GetInt("PlayerCharIndex");
         playerPrefab = StartManager.Instance.charPrefabList[idx];
 
+        mainCanvas.SetActive(true);
         changeCharObj.SetActive(false);
         changeNameObj.SetActive(false);
         userListObj.SetActive(false);
