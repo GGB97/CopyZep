@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     GameObject playerPrefab;
     GameObject playerObj;
 
+    [SerializeField] GameObject changeCharObj;
     [SerializeField] GameObject changeNameObj;
     [SerializeField] GameObject userListObj;
 
@@ -26,8 +28,9 @@ public class GameManager : MonoBehaviour
         mainCamera = Camera.main.GetComponent<CameraController>();
 
         int idx = PlayerPrefs.GetInt("PlayerCharIndex");
-        playerPrefab = StartManager.Instance.charPrefabList[idx]; // 이렇게 할거면 그냥 prefab을 가져오면 되는거 아닌가?
+        playerPrefab = StartManager.Instance.charPrefabList[idx];
 
+        changeCharObj.SetActive(false);
         changeNameObj.SetActive(false);
         userListObj.SetActive(false);
     }
@@ -41,6 +44,12 @@ public class GameManager : MonoBehaviour
     {
         playerObj = Instantiate(playerPrefab);
         mainCamera.playerTransform = playerObj.transform;
+
+        List<Button> obj = new(changeCharObj.GetComponentsInChildren<Button>());
+        for (int i = 0; i < obj.Count; i++)
+        {
+            obj[i].GetComponent<ChangeCharBtn>().myIndex = i;
+        }
     }
 
     void UpdateTime()
@@ -52,6 +61,23 @@ public class GameManager : MonoBehaviour
         // 텍스트 업데이트
         timeText.text = timeString;
     }
+
+    public void ChangeCharStartBtn()
+    {
+        changeCharObj.SetActive(true);
+    }
+
+    public void ChangeCharCompleteBtn(int index)    // 캐릭터 변경을 선택 구현한거에서 변형하다보니 뭔가 이게 맞나.. 싶은느낌?
+    {
+        playerPrefab = StartManager.Instance.charPrefabList[index];
+        Vector2 pos = playerObj.transform.position;
+        Destroy(playerObj);
+        playerObj = Instantiate(playerPrefab, pos, Quaternion.identity);
+        mainCamera.playerTransform = playerObj.transform;
+
+        changeCharObj.SetActive(false);
+    }
+
     public void ChangeNameStartBtn()
     {
         changeNameObj.SetActive(true);

@@ -24,5 +24,6 @@ public class PlayerController : Charactor_Info
     {
         this.name = str;
         _nameText.text = this.name;
+        PlayerPrefs.SetString("PlayerName", this.name);
     }
 }

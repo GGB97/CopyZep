@@ -32,7 +32,7 @@ public class StartManager : MonoBehaviour
         List<Button> obj = new (SelectObj.GetComponentsInChildren<Button>());
         for(int i = 0; i < obj.Count; i++)
         {
-            obj[i].GetComponent<CreateCharBtn>().myIndex = i;
+            obj[i].GetComponent<ChangeCharBtn>().myIndex = i;
         }
     }
 
