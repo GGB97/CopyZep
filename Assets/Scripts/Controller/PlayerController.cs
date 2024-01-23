@@ -15,7 +15,11 @@ public class PlayerController : MonoBehaviour
         _nameText = GetComponentInChildren<Canvas>().GetComponentInChildren<TMP_Text>();
 
         _nameText.text = _info.Name;
+    }
 
-        Debug.Log("Player Start");
+    public void ChangePlayerName(string str)
+    {
+        _info.Name = str;
+        _nameText.text = _info.Name;
     }
 }
