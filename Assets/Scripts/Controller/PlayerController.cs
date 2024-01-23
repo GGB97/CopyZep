@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Charactor_Info
 {
-    PlayerInfo _info;
     TMP_Text _nameText;
+
+    private void Awake()
+    {
+        _nameText = GetComponentInChildren<Canvas>().GetComponentInChildren<TMP_Text>();
+    }
 
     void Start()
     {
         string name = PlayerPrefs.GetString("PlayerName");
-        _info = new PlayerInfo(name);
-        _nameText = GetComponentInChildren<Canvas>().GetComponentInChildren<TMP_Text>();
+        this.name = name;
 
-        _nameText.text = _info.Name;
+        _nameText.text = this.name;
     }
 
     public void ChangePlayerName(string str)
     {
-        _info.Name = str;
-        _nameText.text = _info.Name;
+        this.name = str;
+        _nameText.text = this.name;
     }
 }

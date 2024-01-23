@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2361568034737486541}
   - component: {fileID: 8501404579862852895}
   - component: {fileID: 3674653648124548370}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: mainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,9 +123,9 @@ GameObject:
   - component: {fileID: 6988322209106744103}
   - component: {fileID: 8326894906993596321}
   - component: {fileID: 2300492872759926525}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Penguin
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,7 +145,7 @@ Transform:
   - {fileID: 2361568034737486541}
   - {fileID: 4785408224486555352}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &982766954450522214
 BoxCollider2D:
@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27dd78a332b0374faf5fb31b3113d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
 --- !u!1 &5662394123556608427
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +322,7 @@ GameObject:
   - component: {fileID: 7878334439460326903}
   - component: {fileID: 215712832641411720}
   - component: {fileID: 7539235212498341894}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Name_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +377,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: AAAAAAAAAA
+  m_text: NAME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -457,7 +458,7 @@ GameObject:
   - component: {fileID: 3759221670456728038}
   - component: {fileID: 7948251215870452352}
   - component: {fileID: 3885542544245883660}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +558,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7280488993962307170}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +598,7 @@ GameObject:
   - component: {fileID: 187176867404990168}
   - component: {fileID: 3614997255518211535}
   - component: {fileID: 1361010917182876179}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -17,9 +17,9 @@ GameObject:
   - component: {fileID: 1749423024109054905}
   - component: {fileID: 4173941668391692789}
   - component: {fileID: 2047802742984779583}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Knight
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +39,7 @@ Transform:
   - {fileID: 5486079398597041473}
   - {fileID: 2024577481883959861}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &7047103704708697075
 BoxCollider2D:
@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27dd78a332b0374faf5fb31b3113d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
 --- !u!1 &4960673277104556522
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +217,7 @@ GameObject:
   - component: {fileID: 5704856270688532796}
   - component: {fileID: 6205268493525461091}
   - component: {fileID: 1112928794877979274}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3890055885391252461}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +357,7 @@ GameObject:
   - component: {fileID: 6809907457340933236}
   - component: {fileID: 2523929314834732434}
   - component: {fileID: 7331875716756069067}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Name_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +412,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: AAAAAAAAAA
+  m_text: NAME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -491,7 +492,7 @@ GameObject:
   - component: {fileID: 529980032397572071}
   - component: {fileID: 2706288225847591372}
   - component: {fileID: 8446808729558161160}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -567,7 +568,7 @@ GameObject:
   - component: {fileID: 5486079398597041473}
   - component: {fileID: 8821195591992382545}
   - component: {fileID: 1934037968607914744}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: mainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
